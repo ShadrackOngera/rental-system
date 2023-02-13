@@ -1,6 +1,6 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 @section('content')
     <div class="container">
-        Admin landing page from admin route
+        Extends Admin
     </div>
 @endsection
