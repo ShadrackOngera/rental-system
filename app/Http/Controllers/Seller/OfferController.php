@@ -36,7 +36,40 @@ class OfferController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'location' => 'required',
+            'size' => 'required',
+            'price' => ['required','min:1'],
+            'type' => 'required',
+            'deed' => 'required',
+            'deed_img' => '',
+            'land_img' => '',
+            'description' => 'required',
+            'contact' => 'required',
+            'code' => 'required',
+        ]);
+
+        $deed_path = $request->file('deed_img')->store('title-deeds', 'public');
+        $land_path = $request->file('land_img')->store('land-images', 'public');
+
+        $post = Post::create([
+            'title' => $request->input('title'),
+            'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
+            'location' => $request->input('location'),
+            'size' => $request->input('size'),
+            'price' => $request->input('price'),
+            'type' => $request->input('type'),
+            'deed' => $request->input('deed'),
+            'deed_img' => $deed_path,
+            'land_img' => $land_path,
+            'contact' => $request->input('contact'),
+            'description' => $request->input('description'),
+            'code' => $request->input('code'),
+            'user_id' => auth()->user()->id,
+        ]);
+
+        return redirect()->back();
     }
 
     /**
