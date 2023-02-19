@@ -9,6 +9,17 @@ class Offer extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'email' , 'message' ];
+    protected $fillable = [
+        'title',
+        'location',
+        'house_type',
+        'price',
+        'price_length',
+        'relationship',
+        'house_image',
+        'description',
+        'contact',
+        'payment_code',
+    ];
 
 }
