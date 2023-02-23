@@ -24,34 +24,30 @@
                     <label for="floatingInput">Location</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" name="size" placeholder="size" required>
-                    <label for="floatingInput">Land Size</label>
+                    <input type="text" class="form-control" id="floatingInput" name="house_type" placeholder="House Type" required>
+                    <label for="floatingInput">House Type</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="floatingInput" name="price" placeholder="Outright Price" required>
-                    <label for="floatingInput">Outright Price</label>
+                    <input type="number" class="form-control" id="floatingInput" name="price" placeholder="Price" required>
+                    <label for="floatingInput">Price</label>
                 </div>
 
-                <label for="floatingInput" class="text-muted">RelationShip</label>
-                <select class="form-select mb-3 py-3" aria-label="Default select example" name="type" required>
-                    <option value="owner">I'm The Owner</option>
-                    <option value="broker">I'm A Broker</option>
+                <label for="floatingInput" class="text-muted">Price Length</label>
+                <select class="form-select mb-3 py-3" aria-label="Default select example" name="price_length" required>
+                    <option value="owner">Per Night</option>
+                    <option value="broker">Per Month</option>
+                    <option value="broker">Per Year</option>
                 </select>
 
-                <select class="form-select mb-3 py-3" aria-label="Default select example" name="deed" required>
-                    <option selected>Do you have a title deed for this land?</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
+                <label for="floatingInput" class="text-muted">Relationship</label>
+                <select class="form-select mb-3 py-3" aria-label="Default select example" name="relationship" required>
+                    <option value="owner">Broker</option>
+                    <option value="broker">Owner</option>
                 </select>
 
                 <div class="mb-3">
                     <label for="floatingInput" class="text-muted">Title Deed Image</label>
                     <input type="file" class="form-control" id="floatingInput" name="deed_img" placeholder="Title Deed Image" >
-                </div>
-
-                <div class="mb-3">
-                    <label for="floatingInput" class="text-muted">Land Photo</label>
-                    <input type="file" class="form-control" id="floatingInput" name="land_img" placeholder="Land Photo">
                 </div>
 
                 <div class="form-floating mb-3">
@@ -68,6 +64,11 @@
                     <input type="text" class="form-control" id="floatingInput" name="code" placeholder="Payment Code" required>
                     <label for="floatingInput">Your Payment Code</label>
                     <small class="form-text">The Expected Payment Code is from M-pesa</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="floatingInput" class="text-muted">House Photo</label>
+                    <input type="file" class="form-control" id="floatingInput" name="house_image" placeholder="House Photo">
                 </div>
 
                 <div class="d-grid gap-2 mb-3">
