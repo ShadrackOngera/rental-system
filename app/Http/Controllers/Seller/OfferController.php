@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Seller;
 
 use App\Http\Controllers\Controller;
+use App\Models\Offer;
 use Illuminate\Http\Request;
 
 class OfferController extends Controller
@@ -32,40 +33,37 @@ class OfferController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
         $request->validate([
             'title' => 'required',
             'location' => 'required',
-            'size' => 'required',
-            'price' => ['required','min:1'],
-            'type' => 'required',
-            'deed' => 'required',
-            'deed_img' => '',
-            'land_img' => '',
+            'house_type' => 'required',
+            'price' => 'required',
+            'price_length' => 'required',
+            'relationship' => 'required',
             'description' => 'required',
             'contact' => 'required',
-            'code' => 'required',
+            'payment_code' => 'required',
+            'house_image' => '',
         ]);
 
-        $deed_path = $request->file('deed_img')->store('title-deeds', 'public');
-        $land_path = $request->file('land_img')->store('land-images', 'public');
+        $house_image = $request->file('house_image')->store('houses', 'public');
 
-        $post = Post::create([
+        $offer = Offer::create([
             'title' => $request->input('title'),
-            'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
+//            'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
             'location' => $request->input('location'),
-            'size' => $request->input('size'),
+            'house_type' => $request->input('house_type'),
             'price' => $request->input('price'),
-            'type' => $request->input('type'),
-            'deed' => $request->input('deed'),
-            'deed_img' => $deed_path,
-            'land_img' => $land_path,
+            'price_length' => $request->input('price_length'),
+            'relationship' => $request->input('relationship'),
             'contact' => $request->input('contact'),
             'description' => $request->input('description'),
-            'code' => $request->input('code'),
+            'payment_code' => $request->input('payment_code'),
+            'house_image' => $house_image,
             'user_id' => auth()->user()->id,
         ]);
 
