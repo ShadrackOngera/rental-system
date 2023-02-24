@@ -67,6 +67,7 @@ class OfferController extends Controller
             'user_id' => auth()->user()->id,
         ]);
 
+        return $offer;
         return redirect()->back();
     }
 

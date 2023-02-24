@@ -17,16 +17,15 @@ class Offer extends Model
         'price',
         'price_length',
         'relationship',
-        'house_image',
         'description',
         'contact',
         'payment_code',
+        'house_image',
     ];
 
-    public $appends =['house_image_url'];
 
     public function getHouseUrlAttribute() {
-        return Storage::disk('public')->url($this->houses);
+        return Storage::disk('public')->url($this->house_image);
     }
 
 }
