@@ -45,11 +45,6 @@
                     <option value="broker">Owner</option>
                 </select>
 
-                <div class="mb-3">
-                    <label for="floatingInput" class="text-muted">Title Deed Image</label>
-                    <input type="file" class="form-control" id="floatingInput" name="deed_img" placeholder="Title Deed Image" >
-                </div>
-
                 <div class="form-floating mb-3">
                     <textarea class="form-control" placeholder="Description" name="description" id="floatingTextarea2" style="height: 200px" required></textarea>
                     <label for="floatingTextarea2">Description</label>
@@ -61,7 +56,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" name="code" placeholder="Payment Code" required>
+                    <input type="text" class="form-control" id="floatingInput" name="payment_code" placeholder="Payment Code" required>
                     <label for="floatingInput">Your Payment Code</label>
                     <small class="form-text">The Expected Payment Code is from M-pesa</small>
                 </div>

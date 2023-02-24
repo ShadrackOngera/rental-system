@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Offer extends Model
 {
@@ -21,5 +22,11 @@ class Offer extends Model
         'contact',
         'payment_code',
     ];
+
+    public $appends =['house_image_url'];
+
+    public function getHouseUrlAttribute() {
+        return Storage::disk('public')->url($this->houses);
+    }
 
 }
