@@ -27,6 +27,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Admin Routes
 Route::group(['prefix' => 'admin'], function () {
     Route::get('home', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin.home');
+    Route::get('unpublished', [App\Http\Controllers\Seller\OfferController::class, 'index'])->name('offer.index');
 
 });
 
