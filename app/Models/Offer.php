@@ -28,4 +28,9 @@ class Offer extends Model
         return Storage::disk('public')->url($this->house_image);
     }
 
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
 }

@@ -34,15 +34,15 @@
 
                 <label for="floatingInput" class="text-muted">Price Length</label>
                 <select class="form-select mb-3 py-3" aria-label="Default select example" name="price_length" required>
-                    <option value="owner">Per Night</option>
-                    <option value="broker">Per Month</option>
-                    <option value="broker">Per Year</option>
+                    <option value="Per Night">Per Night</option>
+                    <option value="Per Month">Per Month</option>
+                    <option value="Per Year">Per Year</option>
                 </select>
 
                 <label for="floatingInput" class="text-muted">Relationship</label>
                 <select class="form-select mb-3 py-3" aria-label="Default select example" name="relationship" required>
-                    <option value="owner">Broker</option>
-                    <option value="broker">Owner</option>
+                    <option value="Broker">Broker</option>
+                    <option value="Owner">Owner</option>
                 </select>
 
                 <div class="form-floating mb-3">
