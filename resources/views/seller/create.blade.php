@@ -4,13 +4,13 @@
         <div>
             <div class="container">
                 <div class="text-center text-uppercase">
-                    <h1>Create Land Offer</h1>
+                    <h1>Create Housing Offer</h1>
                 </div>
             </div>
         </div>
         <div class="text-center mb-3">
             <h1>For your post to be published, You have to pay to the Mpesa till below <span class="fw-bold">(5870505)</span></h1>
-            <img src="{{ asset('images/pics/till.jpg') }}" alt="5870505" class="img-fluid">
+{{--            <img src="{{ asset('images/pics/till.jpg') }}" alt="5870505" class="img-fluid">--}}
         </div>
         <div class="container">
             <form action="{{ route('offer.store') }}" method="POST" enctype="multipart/form-data" class="mb-3">

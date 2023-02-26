@@ -21,6 +21,9 @@ app.component('example-component', ExampleComponent);
 import HomePageComponent from './components/HomePageComponent.vue';
 app.component('home-page-component', HomePageComponent);
 
+import ShowOfferComponent from './components/ShowOfferComponent.vue';
+app.component('show-offer-component', ShowOfferComponent);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

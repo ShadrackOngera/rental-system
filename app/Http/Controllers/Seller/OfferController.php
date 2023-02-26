@@ -80,7 +80,7 @@ class OfferController extends Controller
     public function show($id)
     {
         $offer = Offer::where('id', $id)->firstOrFail();
-        return view('seller.show')->with('offer', $id);
+        return view('seller.show')->with('offer', $offer);
     }
 
     /**

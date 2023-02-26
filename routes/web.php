@@ -38,6 +38,6 @@ Route::group(['prefix' => 'seller'], function () {
     Route::get('create', [\App\Http\Controllers\Seller\OfferController::class, 'create'])->name('offer.create');
     Route::post('store', [\App\Http\Controllers\Seller\OfferController::class, 'store'])->name('offer.store');
     Route::delete('offer/{id}/destroy', [\App\Http\Controllers\Seller\OfferController::class, 'destroy'])->name('offer.destroy');
-    Route::get('offer/{id}/show', [\App\Http\Controllers\Seller\OfferController::class, 'show'])->name('offer.show');
+    Route::get('offer/{id}', [\App\Http\Controllers\Seller\OfferController::class, 'show'])->name('offer.show');
 
 });
